@@ -11,7 +11,7 @@ default[:hadoop][:tmp_dir]                 = "#{node[:hadoop][:home]}/tmp"
 default[:hadoop][:conf_dir]                = "#{node[:hadoop][:home]}/etc/hadoop"
 default[:hadoop][:sbin_dir]                = "#{node[:hadoop][:home]}/sbin"
 default[:hadoop][:bin_dir]                 = "#{node[:hadoop][:home]}/bin"
-default[:hadoop][:data_dir]                = "/var/data/hadoop"
+default[:hadoop][:data_dir]                = "/mnt/data/hadoop"
 default[:hadoop][:dn][:data_dir]           = "#{node[:hadoop][:data_dir]}/hdfs/dn"
 default[:hadoop][:nn][:name_dir]           = "#{node[:hadoop][:data_dir]}/hdfs/nn"
 
