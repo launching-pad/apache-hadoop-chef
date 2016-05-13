@@ -48,8 +48,8 @@ if node[:hadoop][:os_defaults] == "true" then
 
   end
 
-node.default['java']['jdk_version'] = 7
-include_recipe "java"
+#node.default['java']['jdk_version'] = 7
+#include_recipe "java"
 
 kagent_bouncycastle "jar" do
 end
@@ -239,7 +239,7 @@ secondary_url = node[:hadoop][:download_url][:secondary]
 Chef::Log.info "Attempting to download hadoop binaries from #{primary_url} or, alternatively, #{secondary_url}"
 
 base_package_filename = File.basename(primary_url)
-cached_package_filename = "#{Chef::Config[:file_cache_path]}/#{base_package_filename}"
+cached_package_filename = "/tmp/binary/#{base_package_filename}"
 
 remote_file cached_package_filename do
   source primary_url
@@ -253,7 +253,7 @@ remote_file cached_package_filename do
 end
 
 base_package_filename = File.basename(secondary_url)
-cached_package_filename = "#{Chef::Config[:file_cache_path]}/#{base_package_filename}"
+cached_package_filename = "/tmp/binary/#{base_package_filename}"
 
 remote_file cached_package_filename do
   source secondary_url
