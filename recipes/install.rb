@@ -51,8 +51,6 @@ if node[:hadoop][:os_defaults] == "true" then
 node.default['java']['jdk_version'] = 7
 include_recipe "java"
 
-kagent_bouncycastle "jar" do
-end
  
 group node[:hadoop][:group] do
   action :create
